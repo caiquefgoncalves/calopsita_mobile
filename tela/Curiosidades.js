@@ -7,11 +7,11 @@ import BotaoNavegacao from "../components/BotaoNavegacao"
 export default function Curiosidades( {navigation} ) {
 
     const listaCuriosides = [
-        "Origem: Elas são nativas das regiões desérticas da Austrália",
-        "Sono: Uma calopsita precisa dormir entre 10 e 12 horas por noite",
-        "Topete: O topete em pé indica alerta, colado á cabeça indica medo ou irritação",
-        "Inteligência: Elas conseguem aprender a assobiar músicas inteiras com facilidade",
-        "Longevidade: Com os cuidados certos, elas podem viver entre 15 e 20 anos"
+        "Origem: Elas são nativas das regiões desérticas da Austrália.",
+        "Sono: Uma calopsita precisa dormir entre 10 e 12 horas por noite.",
+        "Topete: O topete em pé indica alerta, colado á cabeça indica medo ou irritação.",
+        "Inteligência: Elas conseguem aprender a assobiar músicas inteiras com facilidade.",
+        "Longevidade: Com os cuidados certos, elas podem viver entre 15 e 20 anos."
     ]
 
 
