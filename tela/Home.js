@@ -1,6 +1,7 @@
 import {Text, View, StyleSheet, Button, Image} from "react-native";
 
 
+
 export default function Home( {navigation} ) {
     return (
         <View style={styles.pagina}>

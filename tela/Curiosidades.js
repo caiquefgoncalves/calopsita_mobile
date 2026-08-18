@@ -1,89 +1,54 @@
-import {Text, View, StyleSheet, Button, Image} from "react-native";
+import {Text,  StyleSheet, ScrollView} from "react-native";
+import Imagem from "../components/Imagem"
+import Card from "../components/Card"
+import BotaoNavegacao from "../components/BotaoNavegacao"
 
 
 export default function Curiosidades( {navigation} ) {
+
+    const listaCuriosides = [
+        "Origem: Elas são nativas das regiões desérticas da Austrália",
+        "Sono: Uma calopsita precisa dormir entre 10 e 12 horas por noite",
+        "Topete: O topete em pé indica alerta, colado á cabeça indica medo ou irritação",
+        "Inteligência: Elas conseguem aprender a assobiar músicas inteiras com facilidade",
+        "Longevidade: Com os cuidados certos, elas podem viver entre 15 e 20 anos"
+    ]
+
+
     return (
-        <View style={styles.pagina}>
-            <View style={styles.imagemContainer}>
-                <Image
-                    source={require('../assets/calopsita.png')}
-                    style={styles.imagem}
-                    resizeMode="cover"/>
-            </View>
+        <ScrollView contentContainerStyle={styles.container} >
+            <Imagem url="https://exoticosmanausam.com/wp-content/uploads/2025/10/Gemini_Generated_Image_lliqw7lliqw7lliq-1-1.png" />
 
+            <Text style={styles.titulo}>Curiosidades</Text>
 
-            <Text style={styles.titulo}>Calopsitas</Text>
+            {listaCuriosides.map((item, index) => (
+                <Card key={index} texto={item} />
+            ))}
 
-            <View style={styles.card}>
-                <Text style={styles.descricao}>
-                    Bem-vindo ao App das Calopsitas, aprenda tudo sobre essas aves impressionantes!
-                </Text>
-            </View>
+            <BotaoNavegacao
+            titulo="Voltar para a Home"
+            destino="Home"
+            navigation={navigation}
+            />
 
-            <View style={styles.botaoContainer}>
-                <Button title={"Curiosidades"} color="#EAB308" onPress={() => navigation.navigate("Curiosidades")}/>
-            </View>
-
-            <View style={styles.botaoContainer}>
-                <Button title={"Especies"} color="#EAB308" onPress={() => navigation.navigate("Especies")}/>
-            </View>
-
-            <View style={styles.botaoContainer}>
-                <Button title={"Galeria de Imagens"} color="#EAB308" onPress={() => navigation.navigate("Galeria")}/>
-            </View>
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-    pagina:{
-        flex: 1,
-        justifyContent:"center",
-        alignItems:"center",
-        backgroundColor:'#0f172a',
+    container: {
+        flexGrow: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: '#0F172A',
         paddingHorizontal: 24,
+        paddingVertical: 30,
     },
-    imagemContainer:{
-        width: 140,
-        height: 140,
-        borderRadius: 70,
-        backgroundColor: '#ffffff',
+    titulo: {
+        fontSize: 32,
+        fontWeight: '800',
+        color: '#F8FAFC',
         marginBottom: 20,
-        overflow: "hidden",
-    },
-
-    imagem:{
-        width: 140,
-        height: 140,
-    },
-
-    titulo:{
-        fontSize: 40,
-        fontWeight:'bold',
-        color: '#f8fafc',
-        marginBottom: 15,
-        textAlign:'center',
-    },
-
-    card:{
-        width:"100%",
-        maxWidth: 340,
-        backgroundColor:'#1e293b',
-        borderRadius: 16,
-        padding: 20,
-        marginBottom: 25,
-    },
-
-    descricao:{
-        fontSize: 16,
-        color: '#94a3b8',
-        textAlign:'center',
-        lineHeight: 24,
-    },
-
-    botaoContainer:{
-        width:'100%',
-        maxWidth: 340,
-        marginBottom: 25,
+        textAlign: 'center',
     }
 })

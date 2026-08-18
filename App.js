@@ -1,6 +1,9 @@
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import {NavigationContainer} from "@react-navigation/native";
 import Home from "./tela/Home";
+import Curiosidades from "./tela/Curiosidades";
+import Especies from "./tela/Especies";
+import GaleriaImagem from "./tela/GaleriaImagem";
 
 
 const Stack = createNativeStackNavigator();
@@ -11,6 +14,9 @@ export default function App(){
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name={"Home"} component={Home} options={{headerShown: false}} />
+                <Stack.Screen name={"Curiosidades"} component={Curiosidades} options={{headerShown: false}} />
+                <Stack.Screen name={"Especies"} component={Especies} options={{headerShown: false}} />
+                <Stack.Screen name={"Galeria"} component={GaleriaImagem} options={{headerShown: false}} />
             </Stack.Navigator>
         </NavigationContainer>
     )
